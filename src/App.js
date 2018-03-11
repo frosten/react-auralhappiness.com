@@ -5,9 +5,11 @@ import LoadingBar from './components/loadingBar';
 import NextPreviousControl from './components/nextPreviousControl';
 import Player from './components/player';
 import History from './components/browserHistory'
+import Settings from './components/settings'
 
-import './css/App.css';
+
 import './css/Animate.css';
+import './css/App.v2.css';
 
 const base = 'https://api.auralhappiness.com';
 
@@ -18,25 +20,26 @@ class App extends Component {
     super(props)
     this.state = {
       loading: true,
-      songId:'EN9YdpY4Zs9',
+      songId: 'EN9YdpY4Zs9',
       playing: false,
+      shuffle: false,
       volume: 0.6,
       playCount: 0,
       duration: 0,
-      path:'app/view/content/images/load.gif'
+      path: 'app/view/content/images/load.gif'
     }
   }
 
   componentWillMount = () => {
-    let songId = document.location.pathname.replace(/\/song\//gi, '');
+    let songId = document.location.pathname.replace(/\/song\//gi, '').replace(/\/index.html/gi, '');
     setTimeout(function () { this.getSong(songId !== '/' ? songId : this.state.songId) }.bind(this), 1000)
   }
 
   getSong = (songId) => {
     let url = base + '/song/' + songId + '?type=json';
 
-    this.setState({ loading: true, playing: false, path:'app/view/content/images/load.gif'  });
-    
+    this.setState({ loading: true, path: 'app/view/content/images/load.gif' });
+
     var _this = this;
 
     fetch(url)
@@ -52,7 +55,7 @@ class App extends Component {
           playCount: this.state.playCount + 1,
           playing: true,
           songLength: "-:--"
-        }); 
+        });
 
         History[_this.state.playCount > 1 ? "push" : "replace"](_this.state, _this.state.title, '/song/' + _this.state.songId)
       })
@@ -60,16 +63,8 @@ class App extends Component {
 
 
   handleChangeSong = (next) => {
-    switch (next) {
-      case "next":
-        this.getSong(this.state.nextSongId);
-        break;
-      case "previous":
-        this.getSong(this.state.prevSongId);
-        break;
-      default:
-        break;
-    }
+    const songId = !this.state.shuffle ? next === "next" ? this.state.nextSongId : this.state.prevSongId : RANDOM;
+    this.getSong(songId);
   }
 
   handlePopState = (event) => {
@@ -87,6 +82,11 @@ class App extends Component {
   handlePlayPause = () => {
     this.setState({ playing: !this.state.playing })
   }
+
+  handleShuffle = () => {
+    this.setState({ shuffle: !this.state.shuffle });
+  }
+
   /**
    * 
    * loaded:0.2313957726767497
@@ -118,16 +118,17 @@ class App extends Component {
   handleError = (err) => {
     if (err.type === 'error') {
       this.setState({
-        name: "Sorry",
-        songLength: "The file can not be found."
-      })
+        name: `${this.state.name} ${this.state.title}`,
+        title: `${err.type}`,
+        songLength: ` ${err.target.error.message}`
+      });
     }
   }
 
   getPlayer = () => {
     if (this.state.songId !== RANDOM)
       return (
-        <ReactPlayer onEnded={this.handleFinishSong} style={{ visibility: 'hidden' }}
+        <ReactPlayer onEnded={this.handleFinishSong} style={{ display: 'none' }}
           url={"https://api.auralhappiness.com/app/view/content/mp3/" + this.state.songId + ".webm"}
           onDuration={this.handleDuration}
           onProgress={this.handleSeekChange}
@@ -139,8 +140,9 @@ class App extends Component {
   render = () => {
     return (
       <div className="App" >
+        <Settings />
         <LoadingBar width={this.state.barWidth} />
-        <div className="main-background" style={{ backgroundImage: 'url('+ base + '/' + this.state.path +')' }} ref="background">
+        <div className="main-background" style={{ backgroundImage: 'url(' + base + '/' + this.state.path + ')' }} ref="background">
           <div className="main-overlay">
             <div className="block-container">
               <div className="previous-button-container">
@@ -173,7 +175,7 @@ class App extends Component {
                 </div>
 
                 <div className="footer">
-                  <Player playing={this.state.playing} handlePlayPause={this.handlePlayPause} handleChangeSong={this.handleChangeSong} name={this.state.name} title={this.state.title} duration={this.state.songLength} />
+                  <Player playing={this.state.playing} shuffle={this.state.shuffle} handlePlayPause={this.handlePlayPause} handleShuffle={this.handleShuffle} handleChangeSong={this.handleChangeSong} name={this.state.name} title={this.state.title} duration={this.state.songLength} />
                 </div>
               </div>
               <div className="next-button-container">

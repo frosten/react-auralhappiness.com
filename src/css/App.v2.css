@@ -47,42 +47,33 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-}
-
-.left-button-image {
-    cursor: pointer;
-}
-
-.right-button-image {
-    cursor: pointer;
-}
-
-.header {
+  }
+  
+  .header {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    padding-top: 20px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
-}
-
-.content {
+  }
+  
+  .content {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -104,9 +95,9 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-}
-
-.footer {
+  }
+  
+  .footer {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -117,9 +108,16 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-}
-
-.header-song-title {
+  }
+  
+  .logo-container {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  
+  .header-song-title {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -147,21 +145,25 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
     flex: 0 auto;
-}
-
-.header-song-name {
+  }
+  
+  .header-song-name {
     display: none;
-}
-
-.main-small-logo {
+  }
+  
+  .main-logo {
+    padding-top: 20px;
+  }
+  
+  .main-small-logo {
     display: none;
-}
-
-.header-song-artist {
+  }
+  
+  .header-song-artist {
     display: none;
-}
-
-.previous-button-container {
+  }
+  
+  .previous-button-container {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -170,9 +172,9 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-}
-
-.next-button-container {
+  }
+  
+  .next-button-container {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -181,9 +183,9 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-}
-
-.song-title-container {
+  }
+  
+  .song-title-container {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -196,13 +198,14 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-justify-content: space-around;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-}
-
-.footer-song-artist {
+  }
+  
+  .footer-song-artist {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    margin-bottom: 0px;
     -webkit-box-pack: start;
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
@@ -211,9 +214,9 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
     flex: 0 auto;
-}
-
-.div-block {
+  }
+  
+  .div-block {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -230,9 +233,9 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
     flex: 0 auto;
-}
-
-.footer-song-title-container {
+  }
+  
+  .footer-song-title-container {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -245,9 +248,9 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
-}
-
-.div-block-3 {
+  }
+  
+  .div-block-3 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -256,20 +259,20 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
     flex: 0 auto;
-}
-
-.div-block-4 {
+  }
+  
+  .div-block-4 {
     -webkit-box-flex: 0;
     -webkit-flex: 0 auto;
     -ms-flex: 0 auto;
     flex: 0 auto;
-}
-
-.footer-song-title {
+  }
+  
+  .footer-song-title {
     display: inline;
-}
-
-.container {
+  }
+  
+  .container {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -283,17 +286,17 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-justify-content: flex-start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-}
-
-.block-container {
+  }
+  
+  .block-container {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     min-height: 100vh;
-}
-
-.item-container {
+  }
+  
+  .item-container {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -307,16 +310,16 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-}
-
-.footer-song-duration {
+  }
+  
+  .footer-song-duration {
     margin-top: 0px;
     margin-bottom: 0px;
     padding-left: 10px;
     color: #ec008c;
-}
-
-.div-block-6 {
+  }
+  
+  .div-block-6 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -325,16 +328,16 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-align-items: flex-start;
     -ms-flex-align: start;
     align-items: flex-start;
-}
-
-.player-container {
+  }
+  
+  .player-container {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-}
-
-.footer-logo {
+  }
+  
+  .footer-logo {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -347,16 +350,16 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-}
-
-.player-items {
+  }
+  
+  .player-items {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-}
-
-.loadbar {
+  }
+  
+  .loadbar {
     position: fixed;
     left: 0px;
     right: 0px;
@@ -366,9 +369,9 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     min-height: 6px;
     background-color: rgba(63, 11, 11, .6);
     color: #fff;
-}
-
-.loadbar-cover {
+  }
+  
+  .loadbar-cover {
     position: fixed;
     left: 0px;
     right: 0px;
@@ -376,163 +379,210 @@ normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css
     width: 50%;
     height: 6px;
     background-color: red;
-}
-
-.previous-button-image {
+  }
+  
+  .previous-button-image {
     cursor: pointer;
-}
-
-.next-button-image {
+  }
+  
+  .next-button-image {
     cursor: pointer;
-}
-
-.footer-logo-image {
+  }
+  
+  .footer-logo-image {
     cursor: pointer;
-}
-
-.header-song-duration {
+  }
+  
+  .header-song-duration {
     display: none;
-}
-
-.play-button-image {
-    margin-left: 10px;
-    margin-right: 10px;
+  }
+  
+  .play-button-image {
     cursor: pointer;
-}
-
-@media (max-width: 991px) {
+  }
+  
+  .div-block-7 {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  
+  .extended-player {
+    display: none;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    background-color: #319ee7;
+  }
+  
+  @media (max-width: 991px) {
     .main-background {
-    display: block;
+      display: block;
     }
     .header-song-name {
-    padding-left: 10px;
+      padding-left: 10px;
     }
-}
-
-@media (max-width: 767px) {
+  }
+  
+  @media (max-width: 767px) {
     .header-song-title {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 auto;
-    -ms-flex: 0 auto;
-    flex: 0 auto;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 auto;
+      -ms-flex: 0 auto;
+      flex: 0 auto;
     }
     .header-song-name {
-    padding-left: 10px;
+      padding-left: 10px;
     }
     .main-small-logo {
-    display: none;
+      display: none;
     }
     .song-title-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    }
-    .header-song-duration {
-    display: none;
-    }
-}
-
-@media (max-width: 479px) {
-    .main-overlay {
-    overflow: hidden;
-    }
-    .header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    }
-    .logo-container {
-    display: none;
-    }
-    .header-song-title {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 auto;
-    -ms-flex: 0 0 auto;
-    flex: 0 0 auto;
-    }
-    .header-song-name {
-    display: block;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-left: 0px;
-    }
-    .main-logo {
-    display: none;
-    }
-    .main-small-logo {
-    display: block;
-    }
-    .header-song-artist {
-    display: block;
-    margin-bottom: 0px;
-    }
-    .song-title-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
     }
     .footer-song-artist {
-    display: none;
-    }
-    .footer-song-title {
-    display: none;
-    }
-    .footer-song-duration {
-    display: none;
-    }
-    .player-container {
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    }
-    .footer-logo {
-    display: none;
-    }
-    .previous-button-image {
-    display: none;
-    }
-    .next-button-image {
-    display: none;
-    }
-    .footer-logo-image {
-    display: none;
+      margin-bottom: 0px;
     }
     .header-song-duration {
-    display: block;
-    color: #ec008c;
-    font-size: 18px;
-    font-weight: 700;
+      display: none;
+    }
+  }
+  
+  @media (max-width: 479px) {
+    .main-overlay {
+      overflow: hidden;
+    }
+    .header {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+    .logo-container {
+      display: none;
+    }
+    .header-song-title {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+    }
+    .header-song-name {
+      display: block;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      padding-left: 0px;
+    }
+    .main-logo {
+      display: none;
+    }
+    .main-small-logo {
+      display: block;
+    }
+    .header-song-artist {
+      display: block;
+      margin-bottom: 0px;
+    }
+    .next-button-container {
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+    }
+    .song-title-container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+      align-items: flex-start;
+    }
+    .footer-song-artist {
+      display: none;
+    }
+    .footer-song-title {
+      display: none;
+    }
+    .footer-song-duration {
+      display: none;
+    }
+    .player-container {
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    .footer-logo {
+      display: none;
+    }
+    .previous-button-image {
+      display: none;
+    }
+    .next-button-image {
+      display: none;
+    }
+    .footer-logo-image {
+      display: none;
+    }
+    .header-song-duration {
+      display: block;
+      color: #ec008c;
+      font-size: 18px;
+      font-weight: 700;
     }
     .play-button-image {
-    cursor: pointer;
+      cursor: pointer;
     }
- 
+    .left-button-image {
+      cursor: pointer;
+    }
+    .right-button-image {
+      cursor: pointer;
+    }
+    
+  }
+
+  .shuffle-button-image {
+    cursor: pointer;
+}
+.player-settings {
+  margin-left: 10px;
+  display:flex;
+  width: 25px;
+  height: 25px;
+  background-image: url("https://png.icons8.com/ios-glyphs/25/ffffff/horizontal-settings-mixer.png");
+  align-items: center;
+  justify-content: center;
+  cursor:pointer;
 }

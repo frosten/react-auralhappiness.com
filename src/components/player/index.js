@@ -4,11 +4,12 @@ import React, { Component } from 'react';
 import NextPreviousControl from '../nextPreviousControl'
 
 const animationEndEvent = 'animationend'
+let animateElement = [];
 
 class Player extends Component {
     constructor(props) {
         super(props);
-        this.state = { ...props};
+        this.state = { ...props };
     }
 
     componentWillReceiveProps = (nextProps) => {
@@ -16,25 +17,40 @@ class Player extends Component {
     }
 
     componentDidMount() {
-        this.refs.actionButton.addEventListener(animationEndEvent, this.unloadAnimation);
+        animateElement = [this.refs.actionButton, this.refs.shuffleButton];
+        animateElement.forEach((item) => {
+            item.addEventListener(animationEndEvent, this.unloadAnimation);
+        })
+
     }
 
     componentWillUnmount() {
-        this.refs.actionButton.removeEventListener(animationEndEvent, this.unloadAnimation);
+        animateElement.forEach((item) => {
+            item.removeEventListener(animationEndEvent, this.unloadAnimation);
+        })
     }
 
-    toggleClass = (add) => {
-        this.refs.actionButton.classList[add ? "add" : "remove"](...["animated", "flipInY"]);
+    toggleClass = (add, item) => {
+        item.classList[add ? "add" : "remove"](...["animated", "flipInY"]);
     }
 
     unloadAnimation = () => {
-        this.toggleClass(false);
+        animateElement.forEach((item) => {
+            this.toggleClass(false, item);
+        });
     }
 
     playOrPause = () => {
         if (typeof this.props.handlePlayPause === 'function') {
-            this.toggleClass(true);
+            this.toggleClass(true, this.refs.actionButton);
             this.props.handlePlayPause();
+        }
+    }
+
+    shuffle = () => {
+        if (typeof this.props.handleShuffle === 'function') {
+            this.toggleClass(true, this.refs.shuffleButton);
+            this.props.handleShuffle();
         }
     }
 
@@ -53,14 +69,18 @@ class Player extends Component {
                 </div>
             </div>
             <div className="player-container">
-                <div className="footer-logo"><img src="/img/5a9409c48a834600011a8036_footer-logo.png" alt="aural happiness" className="footer-logo-image" /></div>
+                <div className="footer-logo">
+                    <div><img src="/img/5a9409c48a834600011a8036_footer-logo.png" alt="aural happiness" className="footer-logo-image" /></div>
+                    <div><label className="player-settings " htmlFor="modal-1" ></label></div>
+                </div>
                 <div className="player-items">
-                    <NextPreviousControl type="previous" className="previous-button-image" image="/img/5a9409c4a44ab70001ea66ce_prev.png" click={this.state.handleChangeSong} />
-                    <div><img ref="actionButton" onClick={this.playOrPause} src={this.state.playing ? "/img/5a9409c428c28c00011edfa6_pause.png" : "/img/5a9409c428c28c00011edfa6_play.png"} alt="play" className="play-button-image" /></div>
-                    <NextPreviousControl type="next" className="next-button-image" image="/img/5a9409c4a44ab70001ea66cf_next.png" click={this.state.handleChangeSong} />
+                    <NextPreviousControl type="previous" className="previous-button-image" image="https://png.icons8.com/ios/50/ffffff/skip-to-start.png" click={this.state.handleChangeSong} />
+                    <div><img ref="actionButton" onClick={this.playOrPause} src={this.state.playing ? "https://png.icons8.com/ios/50/ec008c/circled-pause.png" : "https://png.icons8.com/ios/50/ffffff/circled-play.png"} alt="play" className="play-button-image" /></div>
+                    <NextPreviousControl type="next" className="next-button-image" image="https://png.icons8.com/ios/50/ffffff/end.png" click={this.state.handleChangeSong} />
+                    <div><img ref="shuffleButton" alt="shuffle" className="shuffle-button-image" src={this.state.shuffle ? "https://png.icons8.com/ios/50/ec008c/shuffle-filled.png" : "https://png.icons8.com/ios/50/ffffff/shuffle.png"} onClick={this.shuffle} /></div>
                 </div>
             </div>
-        </div>)
+        </div >)
     }
 }
 
