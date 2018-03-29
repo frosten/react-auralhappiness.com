@@ -32,7 +32,7 @@ class App extends Component {
 
   componentWillMount = () => {
     let songId = document.location.pathname.replace(/\/song\//gi, '').replace(/\/index.html/gi, '');
-    setTimeout(function () { this.getSong(songId !== '/' ? songId : this.state.songId) }.bind(this), 1000)
+    var st = setTimeout(function () { this.getSong(songId !== '/' ? songId : this.state.songId); clearTimeout(st); }.bind(this), 1000)
   }
 
   getSong = (songId) => {
